@@ -114,7 +114,9 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
     box-sizing: border-box;
 
 }
-.site-header 
+.site-header logo {
+    padding-top: 10px;
+} 
 .site-header nav {
     display: flex;
     align-items: center;
