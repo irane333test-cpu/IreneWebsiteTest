@@ -113,8 +113,8 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
     justify-content: sepace-between;
     box-sizing: border-box;
 
-    padding-top: 10px;
 }
+.site-header 
 .site-header nav {
     display: flex;
     align-items: center;
