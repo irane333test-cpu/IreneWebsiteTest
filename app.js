@@ -107,4 +107,7 @@ if(contactForm){
   });
 }
 
-loadConcerts();
+
+if (document.getElementById("concert-form")){
+  loadConcerts();
+}
