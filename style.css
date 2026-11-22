@@ -55,8 +55,11 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: sepace-between;
     align-items: center;
+
+    padding-top: 60px;
+    padding-bottm: 60px;
 
     color: white;
     text-align: center;
