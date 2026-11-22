@@ -31,7 +31,7 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
 @media(max-width:650px) { .site-header { align-items:flex-start; flex-direction:column; } nav { gap:12px; } .hero { min-height:400px; } .section { padding:58px 7%; } .profile-card { grid-template-columns:1fr; } }
 
 
-/* トップページ全体 */
+/* トップページ全体 ============================================================================================== */
 .top-page {
     margin: 0;
     min-height: 100vh;
@@ -75,7 +75,6 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
     margin-top: 0;
 }
 
-
 /* メニュー */
 .top-menu {
     display: flex;
@@ -95,4 +94,18 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
 /* マウスを乗せたとき */
 .top-menu a:hover {
     opacity: 0.7;
+}
+
+
+/*Header ===========================================================================*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    widht: 100%;
+    height: 8vh;
+    z-index: 1000;
+}
+main {
+    paddind-top: 8vh;
 }
