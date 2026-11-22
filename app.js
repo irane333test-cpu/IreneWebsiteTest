@@ -21,7 +21,6 @@ function loadConcerts() {
     const list = document.getElementById("concert-list");
     const select = document.getElementById("concert-select");
     list.innerHTML = "";
-    select.innerHTML = '<option value="">公演を選択してください</option>';
     if (!result.ok || !result.concerts.length) {
       list.textContent = "現在、受付中のコンサートはありません。";
       return;
@@ -38,14 +37,65 @@ function loadConcerts() {
       venue.textContent = c.venue || "";
       const description = document.createElement("p");
       description.textContent = c.description || "";
-      card.append(date, title, venue, description);
+
+      const reserveButton = document.createElement("a");
+      reserveButton.className = "button";
+      reserveButton.textContent = "予約する";
+      reserveButton.href = 'reservation.html?id=${encodeURIComponent(c.concert_id)}';
+      
+      card.append(date, title, venue, description, reserveButton);
       list.append(card);
-      const option = document.createElement("option");
-      option.value = c.concert_id;
-      option.textContent = `${c.concert_name}（${c.date}）`;
-      select.append(option);
     });
   };
+  const script = document.createElement("script");
+  script.src = `${GAS_WEB_APP_URL}?action=listConcerts&callback=${callbackName}`;
+  script.onerror = () => {
+    document.getElementById("concert-list").textContent = "公演情報を取得できませんでした。";
+  };
+  document.body.appendChild(script);
+}
+
+function loadReservationConcert() {
+  const params = new URLSearchParams(window.location.search);
+  const concertId = params.get("id");
+
+  const display = document.getElementById("selected-concert");
+
+  if(!concertId){
+    display.textContent = "公演情報を取得できませんでした。";
+  }
+
+  window.receiveReservationConcert = (result) => {
+    if(!result.ok){
+      display.textContent = "公演情報を取得できませんでした。";
+      return;
+    }
+    const concert = resdult.concerts.find(
+      c => String(c.concert_id) === concertId
+    );
+
+    if(!concert){
+      display.textContent = "公演情報を取得できませんでした。";
+      return;
+    }
+
+    display.innerHTML = "";
+
+    const title = document.createElement("h3");
+    title.textContent = concert.concert_name
+
+    const date = document.createElement("p");
+    date.className = '日時：${concert.date} ${concert.start_time || ""}';
+
+    const venue = document.createElement("p");
+    venue.textContent = '会場：${concert.venue}';
+    
+    const price = document.createElement("p");
+    price.textContent = '料金：${concert.price}円';
+
+    display.append(title, date, venue, price);
+  };
+  
   const script = document.createElement("script");
   script.src = `${GAS_WEB_APP_URL}?action=listConcerts&callback=${callbackName}`;
   script.onerror = () => {
@@ -90,8 +140,17 @@ const reservationForm = document.getElementById("reservation-form");
 if(reservationForm){
   reservationForm.addEventListener("submit", event => {
     event.preventDefault();
+
+    const params = new URLSearchParams(window.location.search);
+    const concertId = params.get("id");
+
+    if(!concert){
+      document.getElementById("reservation-message").textContent = "予約する公演が選択されていません。";
+      return;
+    }
     const data = Object.fromEntries(new FormData(event.currentTarget).entries());
     data.action = "reserve";
+    data.concert_Id = concertId;
     data.people = Number(data.people);
     submitToGas(data, document.getElementById("reservation-message"));
   });
@@ -110,4 +169,8 @@ if(contactForm){
 
 if (document.getElementById("concert-list")){
   loadConcerts();
+}
+
+if (document.getElementById("selected-concert")){
+  loadReservationConcert();
 }
