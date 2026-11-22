@@ -108,6 +108,7 @@ header {
 }
 main {
     paddind-top: 8vh;
+    box-sizing: border-box;
 }
 footer {
     widht: 100%;
