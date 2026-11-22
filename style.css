@@ -115,7 +115,7 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
 
 }
 .site-header .logo {
-    margin-top: 15px;
+    margin: 0;
 } 
 .site-header nav {
     display: flex;
@@ -161,12 +161,12 @@ footer {
         border: solid 2px black;
     }
     .site-header .logo{
-        padding-top: 10px;
+        padding: 0;
         border: solid 2px black;
     }
     .site-header nav{
         border: solid 2px black;
-        margin-bottom: 5px;
+        margin: 0;
     }
 
     main {
