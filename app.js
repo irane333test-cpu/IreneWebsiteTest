@@ -46,7 +46,7 @@ function loadProfile(){
   const script = document.createElement("script");
   script.src = `${GAS_WEB_APP_URL}?action=getProfile&callback=receiveProfile`;
   script.onerror = () => {
-    document.getElementById("concert-list").textContent = "プロフィールを取得できませんでした。";
+    display.textContent = "プロフィールを取得できませんでした。";
   };
   document.body.appendChild(script);
 }
