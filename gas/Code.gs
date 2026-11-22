@@ -37,7 +37,7 @@ function doGet(e) {
       result = { ok: true, concerts: readObjects_("Concert").filter(c => String(c.status).toLowerCase() === "open") };
     } else if(action === "getProfile"){
       const profiles = readObjects_("Profile");
-      result = { ok: true, profiles.length > 0 ? profiles[0] : null };
+      result = { ok: true, profile : profiles.length > 0 ? profiles[0] : null };
     } else {
       result = { ok: false, message: "不明な操作です。" };
     }
