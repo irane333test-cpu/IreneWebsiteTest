@@ -161,7 +161,7 @@ footer {
         border: solid 2px black;
     }
     .site-header .logo{
-        margin-top: 10px;
+        padding-top: 10px;
         border: solid 2px black;
     }
     .site-header nav{
