@@ -19,7 +19,6 @@ function loadProfile(){
       return;
     }
 
-    const profile = result.profile;
     display.innerHTML = "";
     result.profiles.forEach(profile => {
       const photo = document.createElement("img");
