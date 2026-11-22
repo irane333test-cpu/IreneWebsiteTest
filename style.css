@@ -159,6 +159,10 @@ footer {
         align-items: flex-start;
         justify-content: center;
     }
+    .site-header nav{
+        border: solid 3px black;
+        margin-bottom: 15px;
+    }
 
     main {
         padding-top: 60px;
