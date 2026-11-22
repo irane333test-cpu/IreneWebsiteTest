@@ -10,6 +10,47 @@ if(yearElement){
   yearElement.textContent = new Date().getFullYear();
 }
 
+function loadProfile(){
+  const display = document.getElementById("profile-content");
+
+  window.receiveProfile = (result) => {
+    if(!result.ok || !result.profile){
+      display.textContent = "取得できませんでした";
+      return;
+    }
+
+    const profile = result.profile;
+    display.innerHTML = "";
+
+    const photo = document.createElement("img");
+    photo.src = profile.photo_url;
+    photo.alt = profile.name;
+    photo.className = "profile_photo";
+
+    const name = document.createElement("h3");
+    name.textContent = profile.name;
+
+    const description = document.createElement("h3");
+    description.textContent = profile.description || "";
+    
+    const textArea = document.createElement("div");
+    textArea.className = "profile-text";
+    textArea.append(name, description);
+
+    const container = document.createElement("div");
+    container.className = "profile-container";
+    container.append(photo, textArea);
+
+    display.append(container);
+  };
+  const script = document.createElement("script");
+  script.src = `${GAS_WEB_APP_URL}?action=listConcerts&callback=receiveProfile`;
+  script.onerror = () => {
+    document.getElementById("concert-list").textContent = "プロフィールを取得できませんでした。";
+  };
+  document.body.appendChild(script);
+}
+
 function loadConcerts() {
   if (GAS_WEB_APP_URL.startsWith("ここに")) {
     document.getElementById("concert-list").innerHTML =
