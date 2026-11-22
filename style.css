@@ -29,3 +29,5 @@ textarea { resize:vertical; }
 .form-message { min-height:1.5em; color:var(--accent); }
 footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; }
 @media(max-width:650px) { .site-header { align-items:flex-start; flex-direction:column; } nav { gap:12px; } .hero { min-height:400px; } .section { padding:58px 7%; } .profile-card { grid-template-columns:1fr; } }
+
+
