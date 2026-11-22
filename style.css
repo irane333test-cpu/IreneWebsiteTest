@@ -115,7 +115,7 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
 
 }
 .site-header logo {
-    padding-top: 15px;
+    margin-top: 15px;
 } 
 .site-header nav {
     display: flex;
