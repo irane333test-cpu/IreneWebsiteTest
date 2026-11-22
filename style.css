@@ -31,3 +31,68 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
 @media(max-width:650px) { .site-header { align-items:flex-start; flex-direction:column; } nav { gap:12px; } .hero { min-height:400px; } .section { padding:58px 7%; } .profile-card { grid-template-columns:1fr; } }
 
 
+/* トップページ全体 */
+.top-page {
+    margin: 0;
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.30),
+            rgba(0, 0, 0, 0.30)
+        ),
+        url("images/top-background.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* タイトルとリンクの配置 */
+.top-content {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    text-align: center;
+}
+
+/* サイトタイトル */
+.site-title {
+    font-size: 48px;
+    font-weight: normal;
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+}
+
+/* サブタイトル */
+.site-subtitle {
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 60px;
+}
+
+/* メニュー */
+.top-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* メニューリンク */
+.top-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+
+/* マウスを乗せたとき */
+.top-menu a:hover {
+    opacity: 0.7;
+}
