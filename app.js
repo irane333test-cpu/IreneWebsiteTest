@@ -41,7 +41,7 @@ function loadConcerts() {
       const reserveButton = document.createElement("a");
       reserveButton.className = "button";
       reserveButton.textContent = "予約する";
-      reserveButton.href = 'reservation.html?id=${encodeURIComponent(c.concert_id)}';
+      reserveButton.href = `reservation.html?id=${encodeURIComponent(c.concert_id)}`;
       
       card.append(date, title, venue, description, reserveButton);
       list.append(card);
