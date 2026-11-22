@@ -7,62 +7,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="logo" href="#">MUSICIAN NAME</a>
-    <nav><a href="#profile">プロフィール</a><a href="#concerts">コンサート</a><a href="#reservation">予約</a><a href="#contact">お問い合わせ</a></nav>
-  </header>
+  <div id = "header-container"></div>div>
 
   <main>
-    <section class="hero">
-      <p class="eyebrow">MUSIC / CONCERT</p>
-      <h1>音楽とともに、<br>心に残るひとときを。</h1>
-      <p>演奏活動やコンサートの情報をお届けします。</p>
-      <a class="button" href="#concerts">コンサート情報を見る</a>
-    </section>
-
-    <section id="profile" class="section">
-      <p class="eyebrow">PROFILE</p><h2>プロフィール</h2>
-      <div class="profile-card">
-        <div class="photo-placeholder">PHOTO</div>
-        <div><h3 id="artist-name">アーティスト名</h3>
-          <p id="artist-description">ここに自己紹介文を掲載します。活動内容や音楽への思いなどを紹介してください。</p>
-        </div>
-      </div>
-    </section>
-
     <section id="concerts" class="section section-soft">
       <p class="eyebrow">CONCERT</p><h2>コンサート予定</h2>
       <div id="concert-list" class="concert-list"><p>コンサート情報を読み込んでいます。</p></div>
     </section>
-
-    <section id="reservation" class="section">
-      <p class="eyebrow">RESERVATION</p><h2>コンサート予約</h2>
-      <form id="reservation-form" class="form">
-        <label>コンサート<select name="concert_id" id="concert-select" required><option value="">公演を選択してください</option></select></label>
-        <label>お名前<input name="name" required maxlength="100"></label>
-        <label>メールアドレス<input name="email" type="email" required maxlength="254"></label>
-        <label>電話番号<input name="phone" type="tel" maxlength="30"></label>
-        <label>予約人数<input name="people" type="number" min="1" max="20" value="1" required></label>
-        <button class="button" type="submit">予約する</button>
-        <p id="reservation-message" class="form-message" aria-live="polite"></p>
-      </form>
-    </section>
-
-    <section id="contact" class="section section-soft">
-      <p class="eyebrow">CONTACT</p><h2>お問い合わせ</h2>
-      <form id="contact-form" class="form">
-        <label>お名前<input name="name" required maxlength="100"></label>
-        <label>メールアドレス<input name="email" type="email" required maxlength="254"></label>
-        <label>お問い合わせ内容<textarea name="message" rows="6" required maxlength="3000"></textarea></label>
-        <button class="button" type="submit">送信する</button>
-        <p id="contact-message" class="form-message" aria-live="polite"></p>
-      </form>
-    </section>
   </main>
-  <footer>© <span id="year"></span> MUSICIAN NAME</footer>
+
+  
+  <div id = "footer-container"></div>div>
 
   <!-- GASへのフォーム送信結果を受け取るためのiframe -->
   <iframe name="gas-result-frame" id="gas-result-frame" hidden></iframe>
   <script src="app.js"></script>
+  <script src="common.js"></script>
 </body>
 </html>
+
