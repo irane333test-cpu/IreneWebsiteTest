@@ -10,6 +10,26 @@ if(yearElement){
   yearElement.textContent = new Date().getFullYear();
 }
 
+function loadTopBackground(){
+  const TopPage = document.querySelector(".top-page");
+  if(!TopPage) return;
+
+  window.receivetopbackground = (result) => {
+    if(!result.ok || !result.topbackground){
+      console.log("取得できませんでした");
+      return;
+    }
+    TopPage.style.backgroundImage = `url("${result.imgURL}")`;
+  };
+  const script = document.createElement("script");
+  script.src = `${GAS_WEB_APP_URL}?action=gettopbackground&callback=receiveProfile`;
+  script.onerror = () => {
+    display.textContent = "背景画像を取得できませんでした。";
+  };
+  document.body.appendChild(script);
+}
+
+
 function loadProfile(){
   const display = document.getElementById("profile-content");
 
@@ -208,6 +228,10 @@ if(contactForm){
   });
 }
 
+
+if (document.getElementById(".top-page")){
+  loadTopBackground();
+}
 
 if (document.getElementById("concert-list")){
   loadConcerts();
