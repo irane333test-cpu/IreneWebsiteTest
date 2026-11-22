@@ -216,3 +216,8 @@ if (document.getElementById("concert-list")){
 if (document.getElementById("selected-concert")){
   loadReservationConcert();
 }
+
+if (document.getElementById("profile-content")){
+  loadPlofile();
+}
+
