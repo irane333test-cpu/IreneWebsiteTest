@@ -98,7 +98,7 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
 
 
 /*Header / footer ===========================================================================*/
-header {
+.site-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -110,7 +110,12 @@ header {
 
     display: flex;
     align-items: center;
+    justify-content: sepace-between;
     box-sizing: border-box;
+}
+.site-header nav {
+    display: flex;
+    align-items: center;
 }
 main {
     padding-top: 8vh;
@@ -144,14 +149,11 @@ footer {
 
 /*forMobile ===========================================================*/
 @media (max-width: 600px){
-    header {
-        height: 8vh;
-        min-height: 60px;
-    }
-    header nav {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
+    .site-header {
+        height: 60px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
     }
 
     main {
