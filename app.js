@@ -14,7 +14,7 @@ function loadProfile(){
   const display = document.getElementById("profile-content");
 
   window.receiveProfile = (result) => {
-    if(!result.ok || !result.profile){
+    if(!result.ok || !result.profiles){
       display.textContent = "取得できませんでした";
       return;
     }
