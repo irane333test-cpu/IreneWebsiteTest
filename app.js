@@ -108,6 +108,6 @@ if(contactForm){
 }
 
 
-if (document.getElementById("concert-form")){
+if (document.getElementById("concert-list")){
   loadConcerts();
 }
