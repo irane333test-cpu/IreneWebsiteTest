@@ -3,7 +3,6 @@
 html { scroll-behavior:smooth; }
 body { margin:0; color:var(--ink); background:var(--paper); font-family:"Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif; line-height:1.8; }
 a { color:inherit; text-decoration:none; }
-.site-header { min-height:76px; padding:18px 7%; display:flex; align-items:center; justify-content:space-between; gap:24px; border-bottom:1px solid #eee; }
 .logo { font-weight:700; letter-spacing:.12em; }
 nav { display:flex; flex-wrap:wrap; gap:22px; font-size:.9rem; }
 nav a:hover { color:var(--accent); }
@@ -108,8 +107,7 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
     z-index: 1000;
     background-color: rgba(255,255,255,0.9);
 
-    display: flex;
-    align-items: center;
+    
     justify-content: sepace-between;
     box-sizing: border-box;
 
@@ -118,8 +116,7 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
     margin: 0;
 } 
 .site-header nav {
-    display: flex;
-    align-items: center;
+    
 }
 main {
     padding-top: 8vh;
@@ -154,17 +151,14 @@ footer {
 /*forMobile ===========================================================*/
 @media (max-width: 600px){
     .site-header {
-        height: 80px;
-        flex-direction: column;
         border: solid 2px black;
     }
     .site-header .logo{
-        top: 0;
         border: solid 2px black;
     }
     .site-header nav{
         border: solid 2px black;
-        top: 40px;
+        
     }
 
     main {
