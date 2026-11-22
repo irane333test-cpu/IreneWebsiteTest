@@ -97,7 +97,7 @@ function loadReservationConcert() {
   };
   
   const script = document.createElement("script");
-  script.src = `${GAS_WEB_APP_URL}?action=listConcerts&callback=${callbackName}`;
+  script.src = `${GAS_WEB_APP_URL}?action=listConcerts&callback=receiveReservationConcert`;
   script.onerror = () => {
     document.getElementById("concert-list").textContent = "公演情報を取得できませんでした。";
   };
