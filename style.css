@@ -164,7 +164,7 @@ footer {
     }
     .site-header nav{
         border: solid 2px black;
-        top: 50%;
+        top: 40px;
     }
 
     main {
