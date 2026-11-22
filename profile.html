@@ -7,19 +7,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="logo" href="index.html">Irene</a>
-    <nav><a href="#profile">プロフィール</a><a href="#concerts">コンサート</a><a href="#reservation">予約</a><a href="#contact">お問い合わせ</a></nav>
-  </header>
+  <div id = "header-container"></div>div>
 
   <main>
-    <section class="hero">
-      <p class="eyebrow">MUSIC / CONCERT</p>
-      <h1>音楽とともに、<br>心に残るひとときを。</h1>
-      <p>演奏活動やコンサートの情報をお届けします。</p>
-      <a class="button" href="#concerts">コンサート情報を見る</a>
-    </section>
-
     <section id="profile" class="section">
       <p class="eyebrow">PROFILE</p><h2>プロフィール</h2>
       <div class="profile-card">
@@ -59,11 +49,12 @@
       </form>
     </section>
   </main>
-  <footer>© <span id="year"></span> MUSICIAN NAME</footer>
+  <div id = "footer-container"></div>div>
 
   <!-- GASへのフォーム送信結果を受け取るためのiframe -->
   <iframe name="gas-result-frame" id="gas-result-frame" hidden></iframe>
   <script src="app.js"></script>
+  <script src="common.js"></script>
 </body>
 </html>
 
