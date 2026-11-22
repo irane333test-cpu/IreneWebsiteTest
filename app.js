@@ -99,7 +99,7 @@ if(reservationForm){
 
 const contactForm = document.getElementById("contact-form");
 if(contactForm){
-  if(contactForm){.addEventListener("submit", event => {
+  contactForm.addEventListener("submit", event => {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.currentTarget).entries());
     data.action = "contact";
