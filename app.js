@@ -70,7 +70,7 @@ function loadReservationConcert() {
       display.textContent = "公演情報を取得できませんでした。";
       return;
     }
-    const concert = resdult.concerts.find(
+    const concert = result.concerts.find(
       c => String(c.concert_id) === concertId
     );
 
