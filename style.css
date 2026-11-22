@@ -97,7 +97,7 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
 }
 
 
-/*Header ===========================================================================*/
+/*Header / footer ===========================================================================*/
 header {
     position: fixed;
     top: 0;
@@ -108,4 +108,7 @@ header {
 }
 main {
     paddind-top: 8vh;
+}
+footer {
+    widht: 100%;
 }
