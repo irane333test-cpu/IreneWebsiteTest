@@ -7,7 +7,7 @@ const SHEET_HEADERS = {
   Reservation: ["reservation_id","concert_id","name","email","phone","people","reservation_date","status"],
   Reception: ["reception_id","reservation_id","concert_id","reception_date","received_people","staff"],
   Inquiry: ["inquiry_id","name","email","message","date","status"],
-  Profile: ["profile_id","name","catchphrase","description","biography","photo_url","sns_url"]
+  Profile: ["name","photo_url","description"]
 };
 
 function spreadsheet_() {
