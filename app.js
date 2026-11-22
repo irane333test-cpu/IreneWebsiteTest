@@ -218,6 +218,6 @@ if (document.getElementById("selected-concert")){
 }
 
 if (document.getElementById("profile-content")){
-  loadPlofile();
+  loadProfile();
 }
 
