@@ -52,6 +52,7 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
 /* タイトルとリンクの配置 */
 .top-content {
     min-height: 100vh;
+    box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
@@ -70,15 +71,9 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
     font-size: 48px;
     font-weight: normal;
     letter-spacing: 5px;
-    margin-bottom: 5px;
+    margin: 0;
 }
 
-/* サブタイトル */
-.site-subtitle {
-    font-size: 14px;
-    letter-spacing: 3px;
-    margin-bottom: 60px;
-}
 
 /* メニュー */
 .top-menu {
