@@ -25,12 +25,12 @@ function loadProfile(){
     const photo = document.createElement("img");
     photo.src = profile.photo_url;
     photo.alt = profile.name;
-    photo.className = "profile_photo";
+    photo.className = "profile-photo";
 
     const name = document.createElement("h3");
     name.textContent = profile.name;
 
-    const description = document.createElement("h3");
+    const description = document.createElement("p");
     description.textContent = profile.description || "";
     
     const textArea = document.createElement("div");
