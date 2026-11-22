@@ -21,27 +21,28 @@ function loadProfile(){
 
     const profile = result.profile;
     display.innerHTML = "";
-
-    const photo = document.createElement("img");
-    photo.src = profile.photo_url;
-    photo.alt = profile.name;
-    photo.className = "profile-photo";
-
-    const name = document.createElement("h3");
-    name.textContent = profile.name;
-
-    const description = document.createElement("p");
-    description.textContent = profile.description || "";
-    
-    const textArea = document.createElement("div");
-    textArea.className = "profile-text";
-    textArea.append(name, description);
-
-    const container = document.createElement("div");
-    container.className = "profile-container";
-    container.append(photo, textArea);
-
-    display.append(container);
+    result.profiles.forEach(profile => {
+      const photo = document.createElement("img");
+      photo.src = profile.photo_url;
+      photo.alt = profile.name;
+      photo.className = "profile-photo";
+  
+      const name = document.createElement("h3");
+      name.textContent = profile.name;
+  
+      const description = document.createElement("p");
+      description.textContent = profile.description || "";
+      
+      const textArea = document.createElement("div");
+      textArea.className = "profile-text";
+      textArea.append(name, description);
+  
+      const container = document.createElement("div");
+      container.className = "profile-container";
+      container.append(photo, textArea);
+  
+      display.append(container);
+    });
   };
   const script = document.createElement("script");
   script.src = `${GAS_WEB_APP_URL}?action=getProfile&callback=receiveProfile`;
