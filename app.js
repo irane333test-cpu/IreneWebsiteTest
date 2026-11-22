@@ -86,19 +86,25 @@ function submitToGas(payload, messageElement) {
   form.remove();
 }
 
-document.getElementById("reservation-form").addEventListener("submit", event => {
-  event.preventDefault();
-  const data = Object.fromEntries(new FormData(event.currentTarget).entries());
-  data.action = "reserve";
-  data.people = Number(data.people);
-  submitToGas(data, document.getElementById("reservation-message"));
-});
+const reservationForm = document.getElementById("reservation-form");
+if(reservationForm){
+  reservationForm.addEventListener("submit", event => {
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(event.currentTarget).entries());
+    data.action = "reserve";
+    data.people = Number(data.people);
+    submitToGas(data, document.getElementById("reservation-message"));
+  });
+}
 
-document.getElementById("contact-form").addEventListener("submit", event => {
-  event.preventDefault();
-  const data = Object.fromEntries(new FormData(event.currentTarget).entries());
-  data.action = "contact";
-  submitToGas(data, document.getElementById("contact-message"));
-});
+const contactForm = document.getElementById("contact-form");
+if(contactForm){
+  if(contactForm){.addEventListener("submit", event => {
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(event.currentTarget).entries());
+    data.action = "contact";
+    submitToGas(data, document.getElementById("contact-message"));
+  });
+}
 
 loadConcerts();
