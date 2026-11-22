@@ -4,7 +4,10 @@
  */
 const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwIxgS_xCHuHAhg4Zya8Jel-gSDYkHbT34n9DQ-yv76PSx-QRXM5ayYt8tjDX1Xm5-v/exec";
 
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearElement = document.getElementById("year");
+if(yearElement){
+  yearElement.textContent = new Date().getFullYear();
+}
 
 function loadConcerts() {
   if (GAS_WEB_APP_URL.startsWith("ここに")) {
