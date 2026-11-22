@@ -10,10 +10,13 @@
   <div id = "header-container"></div>
 
   <main>
-    <section id="reservation" class="section">
-      <p class="eyebrow">RESERVATION</p><h2>コンサート予約</h2>
+    <section class="section">
+      <p class="eyebrow">RESERVATION</p>
+      <div id="selected-concert">
+        <p>公演情報を読み込んでいます</p>
+      </div>div>
+      
       <form id="reservation-form" class="form">
-        <label>コンサート<select name="concert_id" id="concert-select" required><option value="">公演を選択してください</option></select></label>
         <label>お名前<input name="name" required maxlength="100"></label>
         <label>メールアドレス<input name="email" type="email" required maxlength="254"></label>
         <label>電話番号<input name="phone" type="tel" maxlength="30"></label>
