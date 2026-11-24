@@ -14,12 +14,25 @@ function loadTopBackground() {
   // 背景画像を設定する要素を取得
   const topPage = document.body;
   // GASからの応答を受け取る関数
-  window.receiveTopBackground = (result) => {
+  /*window.receiveTopBackground = (result) => {
     if (!result.ok || !result.imageUrl) {
       console.log("背景画像を取得できませんでした。");
       return;
     }
     // 背景画像を設定
+    topPage.style.backgroundImage =`url("${result.imageUrl}")`;
+    topPage.style.backgroundSize = "auto 100vh";
+    topPage.style.backgroundPosition = "center center";
+    topPage.style.backgroundRepeat = "no-repeat";
+  };*/
+
+  window.receiveTopBackground = (result) => {
+    console.log("GASからの取得結果:", result);
+  
+    if (!result.ok || !result.imageUrl) {
+      console.log("背景画像を取得できませんでした。");
+      return;
+    }
     topPage.style.backgroundImage =`url("${result.imageUrl}")`;
     topPage.style.backgroundSize = "auto 100vh";
     topPage.style.backgroundPosition = "center center";
