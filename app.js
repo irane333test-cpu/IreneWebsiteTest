@@ -10,24 +10,30 @@ if(yearElement){
   yearElement.textContent = new Date().getFullYear();
 }
 
-function loadTopBackground(){
-  const TopPage = document.getElementById("top-page");
-  if(!TopPage) return;
-
-  window.receivetopbackground = (result) => {
-    if(!result.ok || !result.topbackground){
-      console.log("取得できませんでした");
+function loadTopBackground() {
+  // 背景画像を設定する要素を取得
+  const topPage = document.body;
+  // GASからの応答を受け取る関数
+  window.receiveTopBackground = (result) => {
+    if (!result.ok || !result.imageUrl) {
+      console.log("背景画像を取得できませんでした。");
       return;
     }
-    TopPage.style.backgroundImage = `url("${result.imgURL}")`;
+    // 背景画像を設定
+    topPage.style.backgroundImage =
+      `url("${result.imageUrl}")`;
   };
+
+  // GASにアクセス
   const script = document.createElement("script");
-  script.src = `${GAS_WEB_APP_URL}?action=gettopbackground&callback=receiveProfile`;
+  script.src =
+    `${GAS_WEB_APP_URL}?action=getSettings&callback=receiveTopBackground`;
   script.onerror = () => {
-    display.textContent = "背景画像を取得できませんでした。";
+    console.log("GASへの接続に失敗しました。");
   };
   document.body.appendChild(script);
 }
+
 
 
 function loadProfile(){
