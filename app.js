@@ -11,7 +11,7 @@ if(yearElement){
 }
 
 function loadTopBackground(){
-  const TopPage = document.querySelector(".top-page");
+  const TopPage = document.getElementById("top-page");
   if(!TopPage) return;
 
   window.receivetopbackground = (result) => {
