@@ -20,17 +20,16 @@ function loadTopBackground() {
       return;
     }
     // 背景画像を設定
-    topPage.style.backgroundImage =
-      `url("${result.imageUrl}")`;
+    topPage.style.backgroundImage =`url("${result.imageUrl}")`;
+    topPage.style.backgroundSize = "auto 100vh";
+    topPage.style.backgroundPosition = "center center";
+    topPage.style.backgroundRepeat = "no-repeat";
   };
 
   // GASにアクセス
   const script = document.createElement("script");
-  script.src =
-    `${GAS_WEB_APP_URL}?action=getSettings&callback=receiveTopBackground`;
-  script.onerror = () => {
-    console.log("GASへの接続に失敗しました。");
-  };
+  script.src =`${GAS_WEB_APP_URL}?action=gettopbackground&callback=receiveTopBackground`;
+  script.onerror = () => {console.log("GASへの接続に失敗しました。");};
   document.body.appendChild(script);
 }
 
