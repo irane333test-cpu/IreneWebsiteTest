@@ -235,6 +235,10 @@ if(contactForm){
 }
 
 
+if (document.body.classList.contains("top-page")) {
+  loadTopBackground();
+}
+
 if (document.getElementById(".top-page")){
   loadTopBackground();
 }
