@@ -29,11 +29,11 @@ function loadTopBackground() {
   window.receiveTopBackground = (result) => {
     console.log("GASからの取得結果:", result);
   
-    if (!result.ok || !result.imageURL) {
+    if (!result.ok || !result.imgURL) {
       console.log("背景画像を取得できませんでした。");
       return;
     }
-    topPage.style.backgroundImage =`url("${result.imageURL}")`;
+    topPage.style.backgroundImage =`url("${result.imgURL}")`;
     topPage.style.backgroundSize = "auto 100vh";
     topPage.style.backgroundPosition = "center center";
     topPage.style.backgroundRepeat = "no-repeat";
