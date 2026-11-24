@@ -1,54 +1,126 @@
-* { box-sizing: border-box; }
-:root { --ink:#242424; --muted:#707070; --accent:#8b684e; --paper:#fff; --soft:#f5f2ee; }
-html { scroll-behavior:smooth; }
-body { margin:0; color:var(--ink); background:var(--paper); font-family:"Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif; line-height:1.8; }
-a { color:inherit; text-decoration:none; }
-.logo { font-weight:700; letter-spacing:.12em; }
-nav { display:flex; flex-wrap:wrap; gap:22px; font-size:.9rem; }
-nav a:hover { color:var(--accent); }
-.hero { min-height:480px; padding:100px 9%; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; background:linear-gradient(110deg,#eee8e1,#faf8f5); }
-.hero h1 { font-family:serif; font-size:clamp(2.2rem,6vw,4.4rem); line-height:1.4; margin:12px 0; }
-.hero p { color:var(--muted); }
-.eyebrow { color:var(--accent); font-size:.75rem; letter-spacing:.2em; font-weight:700; }
-.section { padding:80px 9%; }
-.section h2 { font-family:serif; font-size:2rem; margin:0 0 32px; }
-.section-soft { background:var(--soft); }
-.profile-card { display:grid; grid-template-columns:minmax(180px,280px) 1fr; gap:36px; align-items:center; max-width:900px; }
-.photo-placeholder { min-height:220px; display:grid; place-items:center; background:#e6e0d9; color:#8b8178; letter-spacing:.2em; }
-.concert-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
-.concert-card { padding:24px; background:white; border:1px solid #e8e2dc; }
-.concert-card h3 { margin:8px 0; }
-.concert-date { color:var(--accent); font-weight:700; }
-.button { display:inline-block; border:0; padding:12px 26px; background:var(--accent); color:white; cursor:pointer; font:inherit; }
-.button:hover { opacity:.86; }
-.form { max-width:620px; display:grid; gap:18px; }
-.form label { display:grid; gap:6px; font-weight:600; }
-input, select, textarea { width:100%; padding:12px; border:1px solid #ccc; border-radius:0; background:white; font:inherit; }
-textarea { resize:vertical; }
-.form-message { min-height:1.5em; color:var(--accent); }
-footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; }
+
+/* ==========================================================
+   1. 共通設定（サイト全体）
+   ========================================================== */
+
+/* すべての要素のサイズ計算 */
+* {
+    box-sizing: border-box;
+}
+
+/* サイト全体で使用する色 */
+:root {
+    --ink: #242424;
+    --muted: #707070;
+    --accent: #8b684e;
+    --paper: rgba(0,0,0,1);
+    --soft: #f5f2ee;
+}
+
+/* ページ全体 */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--paper);
+    font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+    line-height: 1.8;
+}
+
+/* リンクの共通設定 */
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
 
+/* ==========================================================
+   2. ヘッダー（全ページ共通）
+   ========================================================== */
 
-/* トップページ全体 ============================================================================================== */
+/* ヘッダー全体 */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8vh;
+    min-height: 80px;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 5%;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* サイトロゴ */
+.site-header .logo {
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin: 0;
+}
+
+/* ヘッダーのメニュー */
+.site-header nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+    font-size: 0.9rem;
+}
+
+/* ヘッダーのメニューにマウスを乗せたとき */
+.site-header nav a:hover {
+    color: var(--accent);
+}
+
+
+/* ==========================================================
+   3. メインコンテンツ（全ページ共通）
+   ========================================================== */
+
+/* ヘッダーと本文の重なりを防ぐ */
+main {
+    padding-top: 8vh;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   4. フッター（全ページ共通）
+   ========================================================== */
+
+footer {
+    width: 100%;
+    padding: 28px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+
+/* ==========================================================
+   5. トップページ
+   ========================================================== */
+
+/* トップページ全体 */
 .top-page {
     margin: 0;
     min-height: 100vh;
 
-    /*background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.30),
-            rgba(0, 0, 0, 0.30)
-        ),
-        url("images/top-background.jpg");
+    /* 背景画像の左右の余白を黒にする */
+    background-color: #000;
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;*/
+    /* 背景画像はJavaScriptから設定 */
 }
 
-/* タイトルとリンクの配置 */
+/* タイトルとメニューを配置する領域 */
 .top-content {
     min-height: 100vh;
     box-sizing: border-box;
@@ -56,11 +128,10 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: sepace-between;
-    
+    justify-content: space-between;
 
     padding-top: 60px;
-    padding-bottm: 60px;
+    padding-bottom: 60px;
 
     color: white;
     text-align: center;
@@ -74,7 +145,7 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
     margin-top: 0;
 }
 
-/* メニュー */
+/* トップページのメニュー */
 .top-menu {
     display: flex;
     flex-direction: column;
@@ -82,7 +153,7 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
     margin-top: auto;
 }
 
-/* メニューリンク */
+/* トップページのメニューリンク */
 .top-menu a {
     color: white;
     text-decoration: none;
@@ -90,43 +161,131 @@ footer { padding:28px; text-align:center; color:var(--muted); font-size:.85rem; 
     letter-spacing: 2px;
 }
 
-/* マウスを乗せたとき */
+/* メニューにマウスを乗せたとき */
 .top-menu a:hover {
     opacity: 0.7;
 }
 
 
-/*Header / footer ===========================================================================*/
-.site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
+/* ==========================================================
+   6. 共通パーツ：ヒーローエリア
+   ========================================================== */
+
+.hero {
+    min-height: 480px;
+    padding: 100px 9%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    background: linear-gradient(110deg, #eee8e1, #faf8f5);
+}
+
+.hero h1 {
+    font-family: serif;
+    font-size: clamp(2.2rem, 6vw, 4.4rem);
+    line-height: 1.4;
+    margin: 12px 0;
+}
+
+.hero p {
+    color: var(--muted);
+}
+
+/* 小見出し */
+.eyebrow {
+    color: var(--accent);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   7. 共通パーツ：セクション
+   ========================================================== */
+
+.section {
+    padding: 80px 9%;
+}
+
+.section h2 {
+    font-family: serif;
+    font-size: 2rem;
+    margin: 0 0 32px;
+}
+
+/* 背景色を変えるセクション */
+.section-soft {
+    background: var(--soft);
+}
+
+
+/* ==========================================================
+   8. 共通パーツ：ボタン
+   ========================================================== */
+
+.button {
+    display: inline-block;
+    border: 0;
+    padding: 12px 26px;
+    background: var(--accent);
+    color: white;
+    cursor: pointer;
+    font: inherit;
+}
+
+.button:hover {
+    opacity: 0.86;
+}
+
+
+/* ==========================================================
+   9. 共通パーツ：フォーム
+   ========================================================== */
+
+.form {
+    max-width: 620px;
+    display: grid;
+    gap: 18px;
+}
+
+.form label {
+    display: grid;
+    gap: 6px;
+    font-weight: 600;
+}
+
+/* 入力欄 */
+input,
+select,
+textarea {
     width: 100%;
-    height: 8vh;
-    min-height: 80px;
-    z-index: 1000;
-    background-color: rgba(255,255,255,0.9);
-
-    
-    justify-content: sepace-between;
-    box-sizing: border-box;
-
-}
-.site-header .logo {
-    margin: 0;
-} 
-.site-header nav {
-    
-}
-main {
-    padding-top: 8vh;
-    box-sizing: border-box;
-}
-footer {
-    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    background: white;
+    font: inherit;
 }
 
-/*Profile ==================================================================================*/
+textarea {
+    resize: vertical;
+}
+
+/* 入力結果のメッセージ */
+.form-message {
+    min-height: 1.5em;
+    color: var(--accent);
+}
+
+
+/* ==========================================================
+   10. Profileページ
+   ========================================================== */
+
+/* プロフィール全体 */
 .profile-container {
     display: flex;
     align-items: flex-start;
@@ -135,60 +294,110 @@ footer {
     margin: 30px auto;
 }
 
+/* プロフィール写真 */
 .profile-photo {
-    width:  40%;
+    width: 40%;
     height: auto;
     object-fit: cover;
     border-radius: 8px;
 }
 
+/* プロフィール文章 */
 .profile-text {
     flex: 1;
     line-height: 1.8;
 }
 
+/* プロフィールカード */
+.profile-card {
+    display: grid;
+    grid-template-columns: minmax(180px, 280px) 1fr;
+    gap: 36px;
+    align-items: center;
+    max-width: 900px;
+}
 
-/*forMobile ===========================================================*/
-@media (max-width: 600px){
+/* 写真がない場合の表示 */
+.photo-placeholder {
+    min-height: 220px;
+    display: grid;
+    place-items: center;
+    background: #e6e0d9;
+    color: #8b8178;
+    letter-spacing: 0.2em;
+}
+
+
+/* ==========================================================
+   11. Concertsページ
+   ========================================================== */
+
+/* コンサート一覧 */
+.concert-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+}
+
+/* コンサートカード */
+.concert-card {
+    padding: 24px;
+    background: white;
+    border: 1px solid #e8e2dc;
+}
+
+.concert-card h3 {
+    margin: 8px 0;
+}
+
+/* コンサート開催日 */
+.concert-date {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   12. スマートフォン用設定
+   ========================================================== */
+
+@media (max-width: 600px) {
+
+    /* ヘッダー */
     .site-header {
-        border: solid 2px black;
-    }
-    .site-header .logo{
-        border: solid 2px black;
-    }
-    .site-header nav{
-        border: solid 2px black;
-        
+        min-height: 80px;
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 5px;
+        padding: 10px 15px;
     }
 
-    main {
-        padding-top: 60px;
+    /* ヘッダーのメニュー */
+    .site-header nav {
+        gap: 12px;
+        font-size: 13px;
     }
-    
+
+    /* メインコンテンツ */
+    main {
+        padding-top: 80px;
+    }
+
+    /* プロフィール */
     .profile-container {
         flex-direction: column;
         align-items: center;
         gap: 30px;
     }
-    
+
     .profile-photo {
-        width:  100%;
+        width: 100%;
         max-width: 350px;
     }
-    
+
     .profile-text {
-        width:  100%;
+        width: 100%;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
